@@ -74,12 +74,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     hoursval = 0;
                     totalhours=0;
                     totalfees=0;
+                    temptotalhours=0;
                 }
 
                 if(flag.equals("graduated") && temptotalhours>21){
                     lab.setText("Maximum Hours");
                 }
-                else if(flag.equals("ungraduated") && temptotalfees>19){
+                else if(flag.equals("ungraduated") && temptotalhours>19){
                     lab.setText("Maximum Hours");
                 }
                 else
@@ -128,15 +129,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.graduated:
-                hoursval=21;
+               // hoursval=21;
                 flag="graduated";
                 break;
             case R.id.ungraduated:
-                hoursval=19;
+                //hoursval=19;
                 flag="ungraduated";
                 break;
             case R.id.register:
                 Toast.makeText(this,name.getText().toString(),Toast.LENGTH_SHORT).show();
+                if(flag.equals("graduated") && temptotalhours>21){
+                    lab.setText("Maximum Hours");
+                }
+                else if(flag.equals("ungraduated") && temptotalhours>19){
+                    lab.setText("Maximum Hours");
+                }
+                else
+                {
+                    lab.setText("");
+                }
                 for(Course prd:cList) {
                     if (flag.equals("graduated")) {
                         if (totalhours <= 21) {
