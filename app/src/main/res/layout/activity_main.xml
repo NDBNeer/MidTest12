@@ -203,20 +203,7 @@
                     />
             </LinearLayout>
         </LinearLayout>
-        <Button
-            android:visibility="gone"
-            android:layout_gravity="center"
-            android:layout_margin="10dp"
-            android:id="@+id/addcourse"
-            style="@style/Widget.AppCompat.Button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:backgroundTint="@color/colorPrimary"
-            android:text="Add Course"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
