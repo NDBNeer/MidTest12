@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     CheckBox accommodation,medical_insurance;
     Spinner coursespin;
     TextView total_hours_val,total_fees_val,hours_val,fees_val,lab;
-    Button register,addcourse;
+    Button register;
     ArrayList<Course> cList=new ArrayList<>();
     ArrayList<String>cTypes=new ArrayList<>();
     double med_val=0,acc_val=0,hoursval=0,totalhours=0,totalfees=0;
@@ -45,7 +45,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         graduated.setOnClickListener(this);
         ungraduated.setOnClickListener(this);
         register.setOnClickListener(this);
-        addcourse.setOnClickListener(this);
         if(graduated.isChecked())
         {
             flag="graduated";
@@ -67,7 +66,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         totalfees+=cList.get(i).getCoursefees();
                     }
                 } else if (flag.equals("ungraduated")) {
-                    if (temptotalfees <= 19) {
+                    if (temptotalhours <= 19) {
                         totalhours+=cList.get(i).getCoursehours();
                         totalfees+=cList.get(i).getCoursefees();
                     }
@@ -122,7 +121,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         register=findViewById(R.id.register);
         hours_val=findViewById(R.id.hours_val);
         fees_val=findViewById(R.id.fees_val);
-        addcourse=findViewById(R.id.addcourse);
         lab=findViewById(R.id.lab);
     }
 
@@ -137,15 +135,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 hoursval=19;
                 flag="ungraduated";
                 break;
-            case R.id.addcourse:
-            break;
             case R.id.register:
+                for(int i=0;i<tempList.size();i++)
+                {
+
+                }
                 for(Course prd:cList) {
                     if (flag.equals("graduated")) {
                         if (totalhours <= 21) {
                             tempList.add(prd);
                             tempNames.add(prd.getCoursename());
                         }
+                       /* if(tempNames.contains(prd.getCoursename()))
+                        {
+                            lab.setText("Course already in");
+                            tempList.remove(prd);
+                            tempNames.remove(prd.getCoursename());
+                        }
+                        else
+                        {
+                            lab.setText("");
+
+                        }*/
                     }
                     else if (flag.equals("ungraduated")) {
                         if (totalhours <= 19) {
@@ -156,21 +167,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     else {
                         hoursval = 0;
                     }
-                    //not working
-                  /*  if(tempNames.contains(prd.getCoursename()))
-                    {
-                        Toast.makeText(this,"Course is already selected",Toast.LENGTH_SHORT).show();
-                    }
-                  /*  obj=verifycourse(prd.getCoursename());
-                    if(obj==null)
-                    {
-
-                    }
-                    else
-                    {
-                        Toast.makeText(this,"Course is already selected",Toast.LENGTH_SHORT).show();
-                    }*/
-
                 }
                 if (accommodation.isChecked()) {
                     acc_val = 1000;
