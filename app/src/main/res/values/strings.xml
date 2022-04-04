@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">International\nStudents App</string>
+    <string name="lambton_college">Lambton College</string>
+    <string name="register">Register</string>
+    <string name="enter_student_name">Enter Student Name</string>
+    <string name="graduated">Graduated</string>
+    <string name="un_graduated">Un-graduated</string>
+    <string name="select_course">Select Course</string>
+    <string name="select">Select</string>
+    <string name="accommodation">Accommodation</string>
+    <string name="medical_insurance">Medical Insurance</string>
+    <string name="total_hours">Total Hours</string>
+    <string name="hours">0</string>
+    <string name="total_fees">Total Fees</string>
+    <string name="course_hr">Course Hours</string>
+    <string name="course_fee">Course Fees</string>
+</resources>
