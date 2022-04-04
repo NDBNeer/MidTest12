@@ -138,7 +138,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.register:
                 for(int i=0;i<tempList.size();i++)
                 {
-
+                    //hello
                 }
                 for(Course prd:cList) {
                     if (flag.equals("graduated")) {
