@@ -136,6 +136,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 flag="ungraduated";
                 break;
             case R.id.register:
+                Toast.makeText(this,name.getText().toString(),Toast.LENGTH_SHORT).show();
                 for(Course prd:cList) {
                     if (flag.equals("graduated")) {
                         if (totalhours <= 21) {
